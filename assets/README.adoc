@@ -1,6 +1,35 @@
 = Assets
 :nofooter:
 
+[plantuml, target=gnl, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+start
+
+:Read the file;
+note right
+  man 2 read
+  ssize_t read(int fd, void buf[.count], size_t count);
+end note
+if (is it the EOF ?) then (yes)
+else (no)
+  while (is there a newline ?\nis it the eof) is (no newline)
+    :Read the file;
+  endwhile (newline)
+endif
+:Generate the line;
+:Save the rest of the buffer
+into the static variable;
+:Return the allocate line
+with the \n;
+stop
+@enduml
+
+@enduml
+....
+
 [plantuml, target=vector, format=svg, width=100%]
 ....
 @startuml

@@ -196,6 +196,37 @@ root --> right_1 : right
 @enduml
 ....
 
+== Iterator
+
+[plantuml, target=iterator_class, format=svg, width=100%]
+....
+@startuml
+skinparam defaultFontName JetBrains Mono
+
+class Input {
+}
+
+class Output {
+}
+
+class Forward {
+}
+
+class Bidirectional {
+}
+
+class "Random Access" {
+}
+
+Input <-- Forward
+Output <-- Forward
+Forward <-- Bidirectional
+Bidirectional <-- "Random Access"
+@enduml
+....
+
+== Vector
+
 [plantuml, target=vector, format=svg, width=100%]
 ....
 @startuml
